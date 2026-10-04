@@ -1,169 +1,464 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sarah Yasmin | Analista de Requisitos & QA</title>
-  <meta name="description" content="Sarah Yasmin de Oliveira Silva — Analista de Requisitos e Tester em Brasília/DF. Levantamento de requisitos, testes funcionais e acompanhamento de projetos ágeis.">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✅</text></svg>">
+  <title>Sarah Yasmin · Analista de Requisitos & QA</title>
+  <meta name="description" content="Sarah Yasmin de Oliveira Silva — Analista de Requisitos e Tester em Brasília/DF. Requisitos claros, testes funcionais e projetos ágeis.">
+  <meta property="og:title" content="Sarah Yasmin · Analista de Requisitos & QA">
+  <meta property="og:description" content="Requisitos claros, testes funcionais e projetos ágeis em Brasília/DF.">
+  <meta property="og:image" content="foto.jpg">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..600,100,1;1,9..144,400..600,100,1&family=JetBrains+Mono:wght@500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script>
+    // Aplica preferências salvas antes de desenhar a página (evita "piscar")
+    try {
+      const p = JSON.parse(localStorage.getItem("sy-prefs") || "{}");
+      const r = document.documentElement;
+      r.dataset.theme = p.theme || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+      if (p.font) r.dataset.font = p.font;
+      if (p.contrast) r.dataset.contrast = p.contrast;
+    } catch (e) {}
+  </script>
 </head>
 <body>
 
+<a href="#conteudo" class="sr-only" data-en="Skip to content">Pular para o conteúdo</a>
+
 <header class="topo">
-  <div class="container">
-    <a href="index.html" class="marca">Sarah Yasmin<span>.</span></a>
-    <button class="botao-menu" aria-expanded="false" aria-controls="menu">Menu</button>
-    <nav>
-      <ul class="menu" id="menu">
-        <li><a href="index.html" aria-current="page">Início</a></li>
-        <li><a href="index.html#experiencia">Experiência</a></li>
-        <li><a href="index.html#formacao">Formação</a></li>
-        <li><a href="localizacao.html">Localização</a></li>
-        <li><a href="contato.html">Contato</a></li>
-      </ul>
-    </nav>
+  <div class="wrap">
+    <a href="#inicio" class="marca"><b>{</b> sarah.yasmin <b>}</b></a>
+    <button class="chip-btn btn-menu" aria-expanded="false" aria-controls="nav" data-en="menu">menu</button>
+    <ul class="nav" id="nav">
+      <li><a href="#sobre" data-en="about">sobre</a></li>
+      <li><a href="#projetos" data-en="projects">projetos</a></li>
+      <li><a href="#metodo" data-en="method">método</a></li>
+      <li><a href="#experiencia" data-en="experience">experiência</a></li>
+      <li><a href="#formacao" data-en="education">formação</a></li>
+      <li><a href="#localizacao" data-en="location">localização</a></li>
+      <li><a href="#contato" data-en="contact">contato</a></li>
+    </ul>
+    <button class="chip-btn" id="btn-idioma" aria-label="Switch to English">EN</button>
   </div>
 </header>
 
-<main>
-  <section class="hero">
-    <div class="container">
-      <div class="retrato">
-        <img src="foto.jpg" alt="Foto de Sarah Yasmin sorrindo" width="617" height="700">
-      </div>
+<main id="conteudo">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="inicio">
+    <div class="wrap">
       <div>
-        <h1>Sarah Yasmin de Oliveira Silva</h1>
-        <p class="cargo">Analista de Requisitos &amp; Tester</p>
-        <p class="intro">
-          Transformo o que o cliente precisa em requisitos claros e garanto, com testes,
-          que o software entregue faz exatamente isso. Desde 2023 atuo entre clientes,
-          desenvolvedores e times ágeis em projetos para órgãos públicos e organizações
-          internacionais.
+        <span class="rotulo" data-en="// requirements analyst · brasília, df">// analista de requisitos · brasília, df</span>
+        <h1>Sarah Yasmin<br>de Oliveira <em>Silva</em></h1>
+        <p class="digitando" aria-hidden="true"><span id="digitado"></span><span class="cursor">&nbsp;</span></p>
+        <p class="sr-only" data-en="Requirements Analyst and QA Tester">Analista de Requisitos e Tester</p>
+        <p class="intro" data-en="I turn what clients need into clear requirements — and make sure, through testing, that the delivered software does exactly that. I work with clients, developers and agile teams on projects for public institutions and international organizations.">
+          Transformo o que o cliente precisa em requisitos claros — e garanto, com testes,
+          que o software entregue faz exatamente isso. Atuo entre clientes, desenvolvedores
+          e times ágeis em projetos para órgãos públicos e organizações internacionais.
         </p>
         <div class="acoes">
-          <a href="contato.html" class="botao cheio">Entrar em contato</a>
-          <a href="#experiencia" class="botao vazado">Ver experiência</a>
+          <a href="#projetos" class="btn btn-cheio" data-en="See projects">Ver projetos</a>
+          <a href="#contato" class="btn btn-vazado" data-en="Get in touch">Entrar em contato</a>
+          <a href="curriculo-sarah-yasmin.pdf" class="btn btn-fantasma" download data-en="↓ Download CV">↓ Baixar CV</a>
+        </div>
+        <ul class="contatos-rapidos">
+          <li><button type="button" class="copiar" data-copy="yasminsarahfs@gmail.com">✉ yasminsarahfs@gmail.com</button></li>
+          <li><a href="https://wa.me/5561998825455" target="_blank" rel="noopener">☏ WhatsApp</a></li>
+          <!-- Para adicionar o LinkedIn, troque SEU-USUARIO e tire o comentário:
+          <li><a href="https://www.linkedin.com/in/SEU-USUARIO" target="_blank" rel="noopener">in LinkedIn</a></li>
+          -->
+        </ul>
+      </div>
+
+      <div class="arco">
+        <span class="brilho b1" aria-hidden="true">✦</span>
+        <span class="brilho b2" aria-hidden="true">✦</span>
+        <img src="foto.jpg" alt="Foto de Sarah Yasmin sorrindo" width="613" height="800">
+        <div class="selo"><i></i><span data-en="open to opportunities">aberta a oportunidades</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SOBRE ============ -->
+  <section class="secao tom" id="sobre">
+    <div class="wrap sobre-grid">
+      <div>
+        <span class="rotulo" data-en="// 01. about me">// 01. sobre mim</span>
+        <h2 data-en="Who I am">Quem sou</h2>
+        <p data-en="I'm a Requirements Analyst at Engesoftware, where I work on the Telebras project: gathering and analyzing requirements, writing documentation and keeping clients and development teams aligned throughout each sprint.">
+          Sou Analista de Requisitos na Engesoftware, onde atuo no projeto da Telebras:
+          levanto e analiso requisitos, elaboro a documentação e mantenho clientes e
+          equipes de desenvolvimento alinhados a cada sprint.
+        </p>
+        <p data-en="Before that, I spent almost three years at SetMind as a Requirements Analyst and Tester on the PNUD, SISPA and SISPREQ projects — running functional tests, following technical test analysis and taking part in Scrum ceremonies on Azure. My background in customer service taught me what I value most in this work: listening carefully before specifying anything.">
+          Antes disso, passei quase três anos na SetMind como Analista de Requisitos e Tester
+          nos projetos PNUD, SISPA e SISPREQ — executando testes funcionais, acompanhando a
+          análise técnica de testes e participando das cerimônias Scrum no Azure. Minha origem
+          no atendimento ao público me ensinou o que mais valorizo nesse trabalho: ouvir com
+          atenção antes de especificar qualquer coisa.
+        </p>
+        <div class="numeros">
+          <div class="numero"><strong id="anos-ti">3+</strong><span data-en="years in requirements & QA">anos em requisitos e QA</span></div>
+          <div class="numero"><strong>4</strong><span data-en="projects delivered/in progress">projetos entregues/em andamento</span></div>
+          <div class="numero"><strong>2</strong><span data-en="software companies">empresas de software</span></div>
+          <div class="numero"><strong>6</strong><span data-en="courses & programs">cursos e formações</span></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="grupo-skill">
+          <h3 data-en="// analysis & requirements">// análise &amp; requisitos</h3>
+          <ul class="tags">
+            <li data-en="Requirements gathering">Levantamento de requisitos</li>
+            <li data-en="Requirements analysis">Análise de requisitos</li>
+            <li data-en="Technical documentation">Documentação técnica</li>
+            <li data-en="Client meetings">Reuniões com clientes</li>
+          </ul>
+        </div>
+        <div class="grupo-skill">
+          <h3 data-en="// quality & testing">// qualidade &amp; testes</h3>
+          <ul class="tags">
+            <li data-en="Functional testing">Testes funcionais</li>
+            <li data-en="Program testing">Testes de programas</li>
+            <li data-en="Technical test analysis">Análise técnica de testes</li>
+            <li data-en="Software maintenance">Manutenção de software</li>
+          </ul>
+        </div>
+        <div class="grupo-skill">
+          <h3 data-en="// agile & tools">// ágil &amp; ferramentas</h3>
+          <ul class="tags">
+            <li>Scrum</li>
+            <li data-en="Agile ceremonies">Cerimônias ágeis</li>
+            <li>Azure DevOps</li>
+            <li data-en="Flowcharts">Fluxogramas</li>
+            <li data-en="Programming logic">Lógica de programação</li>
+          </ul>
+        </div>
+        <div class="grupo-skill">
+          <h3 data-en="// people">// pessoas</h3>
+          <ul class="tags">
+            <li data-en="Clear communication">Comunicação clara</li>
+            <li data-en="Customer service">Atendimento ao público</li>
+            <li data-en="Data analysis">Análise de dados</li>
+            <li data-en="Basic English">Inglês básico</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="bloco" aria-labelledby="como-trabalho">
-    <div class="container">
-      <h2 id="como-trabalho">Como eu trabalho</h2>
-      <p class="sub">Escrito do jeito que eu documentaria um caso de teste.</p>
-      <div class="caso-teste">
+  <!-- ============ PROJETOS ============ -->
+  <section class="secao" id="projetos">
+    <div class="wrap">
+      <span class="rotulo" data-en="// 02. projects">// 02. projetos</span>
+      <h2 data-en="What I've worked on">Onde atuei</h2>
+      <p class="lead" data-en="Real projects for public institutions and international organizations, from requirements to testing.">Projetos reais para órgãos públicos e organismos internacionais, do requisito ao teste.</p>
+
+      <div class="projetos">
+        <article class="projeto">
+          <span class="icone" aria-hidden="true">📡</span>
+          <span class="cliente">TELEBRAS · ENGESOFTWARE · 2025 – <span data-en="now">atual</span></span>
+          <h3>Telebras</h3>
+          <p data-en="Requirements work for Telebras, Brazil's state-owned telecom company: gathering and documenting needs and keeping client and development team aligned.">Atuação em requisitos para a Telebras, estatal de telecomunicações: levantamento e documentação das necessidades e alinhamento entre cliente e equipe de desenvolvimento.</p>
+          <ul class="tags"><li data-en="Requirements">Requisitos</li><li data-en="Documentation">Documentação</li><li data-en="Agile">Ágil</li></ul>
+          <details>
+            <summary data-en="My role">Minha atuação</summary>
+            <ul>
+              <li data-en="Requirements gathering and analysis with the client">Levantamento e análise de requisitos com o cliente</li>
+              <li data-en="Writing functional documentation">Elaboração da documentação funcional</li>
+              <li data-en="Following development and agile ceremonies">Acompanhamento do desenvolvimento e das cerimônias ágeis</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="projeto">
+          <span class="icone" aria-hidden="true">🌾</span>
+          <span class="cliente">MAPA · SETMIND · 2023 – 2025</span>
+          <h3>SISPA</h3>
+          <p data-en="Unified system for information, petition and electronic evaluation of pesticides, for Brazil's Ministry of Agriculture.">Sistema Unificado de Informação, Petição e Avaliação Eletrônica de Agrotóxicos, do Ministério da Agricultura e Pecuária.</p>
+          <ul class="tags"><li data-en="Requirements">Requisitos</li><li data-en="Functional testing">Testes funcionais</li><li>Scrum</li></ul>
+          <details>
+            <summary data-en="My role">Minha atuação</summary>
+            <ul>
+              <li data-en="Requirements gathering and analysis">Levantamento e análise de requisitos</li>
+              <li data-en="Functional test execution">Execução de testes funcionais</li>
+              <li data-en="Meetings with client and development team">Reuniões com cliente e equipe de desenvolvimento</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="projeto">
+          <span class="icone" aria-hidden="true">🌍</span>
+          <span class="cliente">PNUD · SETMIND · 2023 – 2025</span>
+          <h3 data-en="UNDP">PNUD</h3>
+          <p data-en="Work on systems delivered in partnership with the United Nations Development Programme (UNDP).">Atuação em sistemas desenvolvidos em parceria com o Programa das Nações Unidas para o Desenvolvimento.</p>
+          <ul class="tags"><li data-en="Testing">Testes</li><li data-en="Requirements">Requisitos</li><li>Azure</li></ul>
+          <details>
+            <summary data-en="My role">Minha atuação</summary>
+            <ul>
+              <li data-en="Program testing and technical test analysis">Testes de programas e análise técnica de testes</li>
+              <li data-en="Documentation and requirements follow-up">Documentação e acompanhamento de requisitos</li>
+              <li data-en="Work items tracked on Azure">Itens acompanhados no Azure</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="projeto">
+          <span class="icone" aria-hidden="true">🗂️</span>
+          <span class="cliente">SETMIND · 2023 – 2025</span>
+          <h3>SISPREQ</h3>
+          <p data-en="System in which I worked across requirements and quality, from gathering needs to validating deliveries.">Sistema em que atuei de ponta a ponta entre requisitos e qualidade, do levantamento das necessidades à validação das entregas.</p>
+          <ul class="tags"><li data-en="Requirements">Requisitos</li><li>QA</li><li data-en="Documentation">Documentação</li></ul>
+          <details>
+            <summary data-en="My role">Minha atuação</summary>
+            <ul>
+              <li data-en="Requirements gathering and documentation">Levantamento e documentação de requisitos</li>
+              <li data-en="Functional testing of deliveries">Testes funcionais das entregas</li>
+              <li data-en="Project follow-up with the development team">Acompanhamento do projeto com o time de desenvolvimento</li>
+            </ul>
+          </details>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MÉTODO ============ -->
+  <section class="secao tom" id="metodo">
+    <div class="wrap">
+      <span class="rotulo" data-en="// 03. how I work">// 03. como eu trabalho</span>
+      <h2 data-en="My method, as a test case">Meu método, em formato de caso de teste</h2>
+      <p class="lead" data-en="Written the way I'd document it at work.">Escrito do jeito que eu documentaria no trabalho.</p>
+      <div class="caso">
         <table>
-          <thead>
-            <tr><th>ID</th><th>Requisito</th><th>Como entrego</th><th>Status</th></tr>
-          </thead>
+          <thead><tr>
+            <th>id</th><th data-en="requirement">requisito</th><th data-en="how I deliver">como entrego</th><th>status</th>
+          </tr></thead>
           <tbody>
-            <tr>
-              <td class="id">RF-01</td>
-              <td>Entender o problema do cliente</td>
-              <td>Levantamento e análise de requisitos em reuniões com clientes e equipes</td>
-              <td><span class="status">Aprovado</span></td>
-            </tr>
-            <tr>
-              <td class="id">RF-02</td>
-              <td>Deixar tudo documentado</td>
-              <td>Documentação clara, rastreável e acessível para todo o time</td>
-              <td><span class="status">Aprovado</span></td>
-            </tr>
-            <tr>
-              <td class="id">RF-03</td>
-              <td>Garantir que funciona</td>
-              <td>Testes funcionais e acompanhamento da análise técnica de testes</td>
-              <td><span class="status">Aprovado</span></td>
-            </tr>
-            <tr>
-              <td class="id">RF-04</td>
-              <td>Manter o projeto no ritmo</td>
-              <td>Cerimônias Scrum e gestão de itens no Azure DevOps</td>
-              <td><span class="status">Aprovado</span></td>
-            </tr>
+            <tr><td class="id">RF-01</td><td data-en="Understand the client's problem">Entender o problema do cliente</td><td data-en="Requirements gathering in meetings with clients and teams">Levantamento de requisitos em reuniões com clientes e equipes</td><td><span class="ok" data-en="passed">aprovado</span></td></tr>
+            <tr><td class="id">RF-02</td><td data-en="Keep everything documented">Deixar tudo documentado</td><td data-en="Clear, traceable documentation accessible to the whole team">Documentação clara, rastreável e acessível para todo o time</td><td><span class="ok" data-en="passed">aprovado</span></td></tr>
+            <tr><td class="id">RF-03</td><td data-en="Make sure it works">Garantir que funciona</td><td data-en="Functional testing and technical test analysis">Testes funcionais e análise técnica de testes</td><td><span class="ok" data-en="passed">aprovado</span></td></tr>
+            <tr><td class="id">RF-04</td><td data-en="Keep the project on pace">Manter o projeto no ritmo</td><td data-en="Scrum ceremonies and work items on Azure DevOps">Cerimônias Scrum e itens de trabalho no Azure DevOps</td><td><span class="ok" data-en="passed">aprovado</span></td></tr>
           </tbody>
         </table>
       </div>
     </div>
   </section>
 
-  <section class="bloco" id="experiencia" aria-labelledby="titulo-exp">
-    <div class="container">
-      <h2 id="titulo-exp">Experiência</h2>
-      <p class="sub">Do atendimento ao público à análise de sistemas: cada etapa me ensinou a ouvir antes de especificar.</p>
-      <ol class="linha-tempo" reversed>
+  <!-- ============ EXPERIÊNCIA ============ -->
+  <section class="secao" id="experiencia">
+    <div class="wrap">
+      <span class="rotulo" data-en="// 04. experience">// 04. experiência</span>
+      <h2 data-en="Career path">Trajetória</h2>
+      <p class="lead" data-en="From customer service to systems analysis: every step taught me to listen before specifying.">Do atendimento ao público à análise de sistemas: cada etapa me ensinou a ouvir antes de especificar.</p>
+
+      <ol class="timeline" reversed>
         <li class="atual">
-          <p class="periodo">Novembro de 2025 – atual</p>
-          <h3>Analista de Requisitos · <span class="empresa">Engesoftware</span></h3>
-          <p>Levantamento e análise de requisitos, elaboração de documentação, reuniões com clientes e equipes de desenvolvimento, acompanhamento de projetos e de cerimônias ágeis.</p>
-          <div class="etiquetas"><span>Projeto Telebras</span><span>Requisitos</span><span>Ágil</span></div>
+          <div class="meta-exp">
+            <span data-en="Nov/2025 — Now">Nov/2025 — Atual</span>
+            <span class="pill agora" data-en="● current">● atual</span>
+            <span class="pill" id="duracao-atual" data-inicio="2025-11">~</span>
+          </div>
+          <h3 data-en="Requirements Analyst">Analista de Requisitos</h3>
+          <p class="empresa">Engesoftware</p>
+          <ul class="itens">
+            <li data-en="Requirements gathering and analysis, and documentation.">Levantamento e análise de requisitos e elaboração de documentação.</li>
+            <li data-en="Meetings with clients and development teams; following projects and agile ceremonies.">Reuniões com clientes e equipes de desenvolvimento; acompanhamento de projetos e cerimônias ágeis.</li>
+            <li data-en="Project: Telebras.">Projeto: Telebras.</li>
+          </ul>
         </li>
         <li>
-          <p class="periodo">Janeiro de 2023 – Outubro de 2025</p>
-          <h3>Analista de Requisitos / Tester · <span class="empresa">SetMind – Escola de Programação e Tecnologia</span></h3>
-          <p>Testes de programas e testes funcionais, acompanhamento da análise técnica de testes, levantamento e análise de requisitos, documentação, reuniões com clientes e desenvolvedores e acompanhamento de projetos com Scrum e Azure.</p>
-          <div class="etiquetas"><span>PNUD</span><span>SISPA</span><span>SISPREQ</span><span>Scrum</span><span>Azure</span></div>
+          <div class="meta-exp">
+            <span>Jan/2023 — <span data-en="Oct/2025">Out/2025</span></span>
+            <span class="pill" data-en="2 years and 10 months">2 anos e 10 meses</span>
+          </div>
+          <h3 data-en="Requirements Analyst / Tester">Analista de Requisitos / Tester</h3>
+          <p class="empresa" data-en="SetMind — Programming and Technology School">SetMind — Escola de Programação e Tecnologia</p>
+          <ul class="itens">
+            <li data-en="Program testing, functional testing and follow-up of technical test analysis.">Testes de programas, testes funcionais e acompanhamento da análise técnica de testes.</li>
+            <li data-en="Requirements gathering and analysis, and documentation.">Levantamento e análise de requisitos e elaboração de documentação.</li>
+            <li data-en="Meetings with clients and developers; agile ceremonies with Scrum and Azure.">Reuniões com clientes e desenvolvedores; cerimônias ágeis com Scrum e Azure.</li>
+            <li data-en="Projects: UNDP, SISPA and SISPREQ.">Projetos: PNUD, SISPA e SISPREQ.</li>
+          </ul>
         </li>
         <li>
-          <p class="periodo">Maio de 2022 – Dezembro de 2022</p>
-          <h3>Recepcionista · <span class="empresa">Wise Up Taguatinga</span></h3>
-          <p>Atendimento aos alunos, emissão de boletos, controle de frequência e incentivo à continuidade no curso.</p>
+          <div class="meta-exp">
+            <span data-en="May/2022 — Dec/2022">Mai/2022 — Dez/2022</span>
+            <span class="pill" data-en="8 months">8 meses</span>
+          </div>
+          <h3 data-en="Receptionist">Recepcionista</h3>
+          <p class="empresa">Wise Up Taguatinga</p>
+          <ul class="itens">
+            <li data-en="Student service, billing and attendance control.">Atendimento aos alunos, emissão de boletos e controle de frequência.</li>
+            <li data-en="Encouraging students to stay in the course.">Incentivo à permanência dos alunos no curso.</li>
+          </ul>
         </li>
         <li>
-          <p class="periodo">Outubro de 2021 – Abril de 2022</p>
-          <h3>Estagiária · <span class="empresa">Bolsa Brasileira de Gemas e Metais</span></h3>
-          <p>Atendimento ao público, recepção, apoio na abertura de contas e análise de dados.</p>
+          <div class="meta-exp">
+            <span data-en="Oct/2021 — Apr/2022">Out/2021 — Abr/2022</span>
+            <span class="pill" data-en="7 months">7 meses</span>
+          </div>
+          <h3 data-en="Intern">Estagiária</h3>
+          <p class="empresa" data-en="Brazilian Gems and Metals Exchange">Bolsa Brasileira de Gemas e Metais</p>
+          <ul class="itens">
+            <li data-en="Customer service and reception.">Atendimento ao público e recepção.</li>
+            <li data-en="Support with account opening and data analysis.">Apoio na abertura de contas e análise de dados.</li>
+          </ul>
         </li>
       </ol>
     </div>
   </section>
 
-  <section class="bloco" id="formacao" aria-labelledby="titulo-form">
-    <div class="container duas-colunas">
-      <div>
-        <h2 id="titulo-form">Formação</h2>
-        <p class="sub">Base acadêmica em sistemas, complementada por cursos práticos.</p>
-        <ul class="formacao">
-          <li class="destaque"><strong>Análise e Desenvolvimento de Sistemas</strong><span>Universidade Católica de Brasília</span></li>
-          <li><strong>Protagonismo Criativo e Desenvolvimento Pessoal</strong><span>Universidade Católica de Brasília</span></li>
-          <li><strong>Conceitos Básicos em Lógica de Programação</strong><span>DIO</span></li>
-          <li><strong>Estrutura de um Software e seu Ambiente de Desenvolvimento</strong><span>DIO</span></li>
-          <li><strong>Entendendo Algoritmos e Fluxogramas</strong><span>DIO</span></li>
-          <li><strong>Inglês Básico</strong><span>Wise Up</span></li>
-        </ul>
-      </div>
-      <div>
-        <h2>Habilidades</h2>
-        <p class="sub">O que uso no dia a dia.</p>
-        <div class="habilidades">
-          <span>Levantamento de requisitos</span>
-          <span>Análise de requisitos</span>
-          <span>Testes funcionais</span>
-          <span>Documentação de software</span>
-          <span>Scrum</span>
-          <span>Metodologias ágeis</span>
-          <span>Azure DevOps</span>
-          <span>Lógica de programação</span>
-          <span>Fluxogramas</span>
-          <span>Comunicação com clientes</span>
-          <span>Análise de dados</span>
+  <!-- ============ FORMAÇÃO ============ -->
+  <section class="secao tom" id="formacao">
+    <div class="wrap">
+      <span class="rotulo" data-en="// 05. education">// 05. formação</span>
+      <h2 data-en="Education">Educação</h2>
+      <p class="lead" data-en="Academic foundation in systems, complemented by hands-on courses.">Base acadêmica em sistemas, complementada por cursos práticos.</p>
+      <div class="form-grid">
+        <div class="curso principal">
+          <span class="marca-curso" aria-hidden="true">✦</span>
+          <div>
+            <small data-en="// degree">// graduação</small>
+            <strong data-en="Systems Analysis and Development">Análise e Desenvolvimento de Sistemas</strong>
+            <span data-en="Catholic University of Brasília">Universidade Católica de Brasília</span>
+          </div>
         </div>
+        <div class="curso"><span class="marca-curso" aria-hidden="true">✦</span><div><small data-en="// course">// curso</small><strong data-en="Creative Leadership and Personal Development">Protagonismo Criativo e Desenvolvimento Pessoal</strong><span data-en="Catholic University of Brasília">Universidade Católica de Brasília</span></div></div>
+        <div class="curso"><span class="marca-curso" aria-hidden="true">✦</span><div><small data-en="// course">// curso</small><strong data-en="Programming Logic Fundamentals">Conceitos Básicos em Lógica de Programação</strong><span>DIO</span></div></div>
+        <div class="curso"><span class="marca-curso" aria-hidden="true">✦</span><div><small data-en="// course">// curso</small><strong data-en="Software Structure and Development Environment">Estrutura de um Software e seu Ambiente de Desenvolvimento</strong><span>DIO</span></div></div>
+        <div class="curso"><span class="marca-curso" aria-hidden="true">✦</span><div><small data-en="// course">// curso</small><strong data-en="Understanding Algorithms and Flowcharts">Entendendo Algoritmos e Fluxogramas</strong><span>DIO</span></div></div>
+        <div class="curso"><span class="marca-curso" aria-hidden="true">✦</span><div><small data-en="// language">// idioma</small><strong data-en="Basic English">Inglês Básico</strong><span>Wise Up</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LOCALIZAÇÃO ============ -->
+  <section class="secao" id="localizacao">
+    <div class="wrap">
+      <span class="rotulo" data-en="// 06. location">// 06. localização</span>
+      <h2 data-en="Where I am">Onde estou</h2>
+      <p class="lead" data-en="Based in Vicente Pires, Federal District, with easy access to Taguatinga, Águas Claras and downtown Brasília.">Moro em Vicente Pires, no Distrito Federal, com acesso fácil a Taguatinga, Águas Claras e ao Plano Piloto.</p>
+      <div class="local-grid">
+        <div class="mapa">
+          <iframe title="Mapa de Vicente Pires, Brasília – DF"
+            src="https://www.google.com/maps?q=Vicente+Pires,+Bras%C3%ADlia+-+DF&z=13&output=embed"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+        <div class="cartao">
+          <h3>Vicente Pires – DF</h3>
+          <p data-en="Brasília, Federal District · Brazil">Brasília, Distrito Federal · Brasil</p>
+          <ul class="modos">
+            <li><span data-en="On-site in Brasília">Presencial em Brasília</span><span class="ok" data-en="available">disponível</span></li>
+            <li><span data-en="Hybrid">Híbrido</span><span class="ok" data-en="available">disponível</span></li>
+            <li><span data-en="Remote">Remoto</span><span class="ok" data-en="available">disponível</span></li>
+          </ul>
+          <a class="btn btn-vazado" href="https://www.google.com/maps/search/?api=1&query=Vicente+Pires,+Bras%C3%ADlia+-+DF" target="_blank" rel="noopener" data-en="Open in Maps">Abrir no Maps</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTATO ============ -->
+  <section class="secao tom" id="contato">
+    <div class="wrap">
+      <span class="rotulo" data-en="// 07. contact">// 07. contato</span>
+      <h2 data-en="Shall we talk?">Vamos conversar?</h2>
+      <div class="contato-grid">
+        <div class="cartao">
+          <span class="disponivel"><i></i><span data-en="open to new connections">aberta a novas conexões</span></span>
+          <p data-en="Whether it's a job opportunity, a project or just talking about tech — I'll be glad to hear from you and I reply quickly.">Seja uma oportunidade profissional, um projeto ou só uma conversa sobre tecnologia — vou gostar de ouvir você e respondo rápido.</p>
+          <ul class="canais">
+            <li><a href="mailto:yasminsarahfs@gmail.com"><span class="ic" aria-hidden="true">✉</span><span><small>e-mail</small><strong>yasminsarahfs@gmail.com</strong></span></a></li>
+            <li><a href="https://wa.me/5561998825455" target="_blank" rel="noopener"><span class="ic" aria-hidden="true">☏</span><span><small>whatsapp</small><strong>(61) 9 9882-5455</strong></span></a></li>
+            <li><a href="#localizacao"><span class="ic" aria-hidden="true">⌖</span><span><small data-en="location">localização</small><strong>Brasília, DF</strong></span></a></li>
+          </ul>
+        </div>
+
+        <form class="cartao" id="form-contato" action="https://formsubmit.co/yasminsarahfs@gmail.com" method="POST" novalidate>
+          <input type="hidden" name="_subject" value="Nova mensagem pelo site pessoal">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <div class="duo">
+            <div class="campo">
+              <label for="nome" data-en="name">nome</label>
+              <input id="nome" name="nome" type="text" autocomplete="name" required>
+              <span class="erro" aria-live="polite"></span>
+            </div>
+            <div class="campo">
+              <label for="email">e-mail</label>
+              <input id="email" name="email" type="email" autocomplete="email" required>
+              <span class="erro" aria-live="polite"></span>
+            </div>
+          </div>
+          <div class="duo">
+            <div class="campo">
+              <label for="telefone" data-en="phone (optional)">telefone (opcional)</label>
+              <input id="telefone" name="telefone" type="tel" autocomplete="tel" inputmode="tel">
+              <span class="erro"></span>
+            </div>
+            <div class="campo">
+              <label for="assunto" data-en="subject">assunto</label>
+              <select id="assunto" name="assunto" required>
+                <option value="" data-en="Select">Selecione</option>
+                <option value="Proposta de emprego" data-en="Job offer">Proposta de emprego</option>
+                <option value="Projeto / Parceria" data-en="Project / Partnership">Projeto / Parceria</option>
+                <option value="Freela / Consultoria" data-en="Freelance / Consulting">Freela / Consultoria</option>
+                <option value="Outro assunto" data-en="Other">Outro assunto</option>
+              </select>
+              <span class="erro" aria-live="polite"></span>
+            </div>
+          </div>
+          <div class="campo">
+            <label for="mensagem" data-en="message">mensagem</label>
+            <textarea id="mensagem" name="mensagem" required minlength="10"></textarea>
+            <span class="erro" aria-live="polite"></span>
+          </div>
+          <button type="submit" class="btn btn-cheio" id="btn-enviar" data-en="Send message">Enviar mensagem</button>
+          <p class="sucesso" role="status" data-en="✓ Message sent! Sarah will get back to you soon.">✓ Mensagem enviada! A Sarah vai responder em breve.</p>
+          <p class="falha" role="alert" data-en="The message couldn't be sent. Please try again or email yasminsarahfs@gmail.com.">Não foi possível enviar. Tente de novo ou escreva para yasminsarahfs@gmail.com.</p>
+        </form>
       </div>
     </div>
   </section>
 </main>
 
 <footer class="rodape">
-  <div class="container">
-    <span>© <span id="ano"></span> Sarah Yasmin de Oliveira Silva</span>
-    <span><a href="localizacao.html">Brasília – DF</a> · <a href="contato.html">Contato</a></span>
+  <div class="wrap">
+    <span>© <span id="ano"></span> Sarah Yasmin de Oliveira Silva · <span data-en="Requirements Analyst">Analista de Requisitos</span> · Brasília, DF</span>
+    <a href="#inicio" data-en="back to top ↑">voltar ao topo ↑</a>
   </div>
 </footer>
+
+<!-- Acessibilidade -->
+<div class="a11y">
+  <div class="a11y-painel" id="a11y-painel" role="group" aria-label="Acessibilidade">
+    <p data-en="// font size">// tamanho da fonte</p>
+    <div class="linha">
+      <button class="chip-btn" data-font="sm" aria-label="Diminuir fonte">A−</button>
+      <button class="chip-btn" data-font="" aria-label="Fonte padrão">A</button>
+      <button class="chip-btn" data-font="lg" aria-label="Aumentar fonte">A+</button>
+      <button class="chip-btn" data-font="xl" aria-label="Fonte bem maior">A++</button>
+    </div>
+    <p data-en="// theme">// tema</p>
+    <div class="linha">
+      <button class="chip-btn" data-theme-btn="dark" data-en="☾ dark">☾ escuro</button>
+      <button class="chip-btn" data-theme-btn="light" data-en="☀ light">☀ claro</button>
+    </div>
+    <p data-en="// contrast">// contraste</p>
+    <div class="linha">
+      <button class="chip-btn" id="btn-contraste" aria-pressed="false" data-en="◐ high contrast">◐ alto contraste</button>
+    </div>
+  </div>
+  <button class="a11y-toggle" aria-expanded="false" aria-controls="a11y-painel" aria-label="Opções de acessibilidade">♿</button>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script src="script.js"></script>
 </body>
