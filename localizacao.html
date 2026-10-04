@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Localização | Sarah Yasmin</title>
+  <meta name="description" content="Sarah Yasmin está baseada em Vicente Pires, Brasília – DF, com disponibilidade para trabalho presencial, híbrido ou remoto.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✅</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topo">
+  <div class="container">
+    <a href="index.html" class="marca">Sarah Yasmin<span>.</span></a>
+    <button class="botao-menu" aria-expanded="false" aria-controls="menu">Menu</button>
+    <nav>
+      <ul class="menu" id="menu">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="index.html#experiencia">Experiência</a></li>
+        <li><a href="index.html#formacao">Formação</a></li>
+        <li><a href="localizacao.html" aria-current="page">Localização</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="container cabecalho-pagina">
+    <h1>Onde estou</h1>
+    <p>Moro em Vicente Pires, no Distrito Federal, com acesso fácil a Taguatinga, Águas Claras e ao Plano Piloto.</p>
+  </div>
+
+  <div class="container grade-local">
+    <div class="mapa">
+      <iframe
+        title="Mapa de Vicente Pires, Brasília – DF"
+        src="https://www.google.com/maps?q=Vicente+Pires,+Bras%C3%ADlia+-+DF&z=13&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen></iframe>
+    </div>
+
+    <aside class="cartao info-local">
+      <h2>Vicente Pires – DF</h2>
+      <p>Brasília, Distrito Federal · Brasil</p>
+
+      <ul class="modalidades" aria-label="Modalidades de trabalho">
+        <li>Presencial em Brasília <span class="status">Disponível</span></li>
+        <li>Híbrido <span class="status">Disponível</span></li>
+        <li>Remoto <span class="status">Disponível</span></li>
+      </ul>
+
+      <div class="acoes">
+        <a class="botao cheio" href="contato.html">Entrar em contato</a>
+        <a class="botao vazado" href="https://www.google.com/maps/search/?api=1&query=Vicente+Pires,+Bras%C3%ADlia+-+DF" target="_blank" rel="noopener">Abrir no Maps</a>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer class="rodape">
+  <div class="container">
+    <span>© <span id="ano"></span> Sarah Yasmin de Oliveira Silva</span>
+    <span><a href="localizacao.html">Brasília – DF</a> · <a href="contato.html">Contato</a></span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

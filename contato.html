@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contato | Sarah Yasmin</title>
+  <meta name="description" content="Entre em contato com Sarah Yasmin, Analista de Requisitos e Tester em Brasília – DF.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✅</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topo">
+  <div class="container">
+    <a href="index.html" class="marca">Sarah Yasmin<span>.</span></a>
+    <button class="botao-menu" aria-expanded="false" aria-controls="menu">Menu</button>
+    <nav>
+      <ul class="menu" id="menu">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="index.html#experiencia">Experiência</a></li>
+        <li><a href="index.html#formacao">Formação</a></li>
+        <li><a href="localizacao.html">Localização</a></li>
+        <li><a href="contato.html" aria-current="page">Contato</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="container cabecalho-pagina">
+    <h1>Vamos conversar</h1>
+    <p>Tem uma vaga, um projeto ou uma dúvida? Envie uma mensagem e eu respondo por e-mail.</p>
+  </div>
+
+  <div class="container grade-contato">
+    <!--
+      O formulário usa o FormSubmit (gratuito, sem servidor).
+      No primeiro envio, chega um e-mail de ativação em yasminsarahfs@gmail.com — é só confirmar.
+    -->
+    <form class="cartao" id="form-contato"
+          action="https://formsubmit.co/yasminsarahfs@gmail.com" method="POST" novalidate>
+      <input type="hidden" name="_subject" value="Nova mensagem pelo site pessoal">
+      <input type="hidden" name="_template" value="table">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+      <div class="campo">
+        <label for="nome">Nome</label>
+        <input id="nome" name="nome" type="text" autocomplete="name" required>
+        <span class="erro" aria-live="polite"></span>
+      </div>
+
+      <div class="campo">
+        <label for="email">E-mail</label>
+        <input id="email" name="email" type="email" autocomplete="email" required>
+        <span class="erro" aria-live="polite"></span>
+      </div>
+
+      <div class="campo">
+        <label for="assunto">Assunto</label>
+        <select id="assunto" name="assunto">
+          <option>Oportunidade de trabalho</option>
+          <option>Projeto ou parceria</option>
+          <option>Outro assunto</option>
+        </select>
+      </div>
+
+      <div class="campo">
+        <label for="mensagem">Mensagem</label>
+        <textarea id="mensagem" name="mensagem" required minlength="10"></textarea>
+        <span class="erro" aria-live="polite"></span>
+      </div>
+
+      <button type="submit" class="botao cheio">Enviar mensagem</button>
+    </form>
+
+    <aside class="cartao">
+      <h2 style="font-size:1.3rem;margin-bottom:1rem">Outros canais</h2>
+      <ul class="canais">
+        <li><a href="mailto:yasminsarahfs@gmail.com"><small>E-mail</small><strong>yasminsarahfs@gmail.com</strong></a></li>
+        <li><a href="https://wa.me/5561998825455" target="_blank" rel="noopener"><small>WhatsApp</small><strong>(61) 9 9882-5455</strong></a></li>
+        <li><a href="localizacao.html"><small>Localização</small><strong>Vicente Pires, Brasília – DF</strong></a></li>
+      </ul>
+    </aside>
+  </div>
+</main>
+
+<footer class="rodape">
+  <div class="container">
+    <span>© <span id="ano"></span> Sarah Yasmin de Oliveira Silva</span>
+    <span><a href="localizacao.html">Brasília – DF</a> · <a href="contato.html">Contato</a></span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
